@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="Challenge-1.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Martel+Sans:wght@600&family=Poppins:wght@300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  /* min-height: 60vh; */
+  /* max-height: 80vh; */
+  height: 80vh;
+  width: 100vw;
+  background-image: url(assets/Bg-img.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.main .shadow {
+  height: 80vh;
+  width: 100vw;
+  position: absolute;
+  top: 0px;
+  opacity: 0.66;
+  background-color: black;
+}
+
+nav {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  max-width: 80vw;
+  margin: auto;
+  justify-content: space-between;
+  padding: 4vmin;
+  align-items: center;
+}
+
+nav img {
+  color: red;
+  width: 20vmin;
+}
+
+.main .box {
+  display: flex;
+  height: calc(100% - 15%);
+  flex-direction: column;
+  position: relative;
+  margin: 0px 10vmin;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  gap: 3vmin;
+}
+
+.box > :nth-child(1) {
+  font-weight: 900;
+  font-size: 5vmin;
+}
+.box > :nth-child(2) {
+  font-size: 4.3vmin;
+}
+.box > :nth-child(3) {
+  font-size: 3.7vmin;
+}
+
+.btn-1 {
+  padding: 1.2vw 2.9vw;
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+.btn-2 {
+  background-color: red;
+  color: white;
+  padding: 1.2vw 2.9vw;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-3 {
+  background-color: red;
+  color: white;
+  border-radius: 8px;
+  font-size: 2.7vmin;
+  padding: 2vmin 2.8vmin;
+  cursor: pointer;
+}
+
+.main input {
+  padding: 2vmin 2.8vmin;
+  background-color: rgba(0, 0, 0, 0.37);
+  color: white;
+  border-radius: 8px;
+  text-decoration: underline solid black;
+  border: none;
+  font-size: 2.7vmin;
+}
+
+.line {
+  height: 6px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.308);
+}
+
+.container-1 {
+  height: auto;
+  max-width: 75vw;
+  gap: 6vmin;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 10vmin 0px;
+}
+
+.content-1,
+.content-2 {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.content-1 > :nth-child(1),
+.content-2 > :nth-child(1) {
+  font-weight: 900;
+  font-size: 5vmin;
+}
+.content-1 > :nth-child(2),
+.content-2 > :nth-child(2) {
+  font-size: 3.5vmin;
+  margin-top: 4vmin;
+}
+
+.media-1 {
+  position: relative;
+  display: inline-block;
+}
+
+.img-1 {
+  width: 55vmin;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+.vid-1 {
+  width: 87%;
+  height: 100%;
+  position: absolute;
+  border: none;
+  top: 0px;
+  right: 0px;
+}
+
+.container-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 90vw;
+  margin: auto;
+  padding: 5vmin 0px 15vmin 0px;
+}
+
+.img-2 {
+  height: auto;
+  width: 57vmin;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <nav>
+            <span><img src="assets/logo.svg" width="53" alt=""></span>
+            <div>
+                <button class="btn-1">English</button>
+                <button class="btn-2" id="text">Sign In</button>
+            </div>
+        </nav>
+        <div class="shadow"></div>
+
+        <div class="box">
+            <span>Unlimited movies, TV shows and more</span>
+            <span>Watch anywhere. Cancel anytime.</span>
+            <span>Ready to watch? Enter your email to create or restart your membership.</span>
+            <div>
+                <input type="text" placeholder="Email Address">
+                <button class="btn-3">Get Started ></button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+
+    <section class="container-1">
+        <div class="content-1">
+            <span>Enjoy on your TV</span>
+            <span>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</span>
+        </div>
+        <div class="media-1">
+            <img src="assets/first.png" class="img-1" alt="">
+            <video src="assets/First.m4v" class="vid-1" autoplay loop muted controls></video>
+        </div>
+    </section>
+
+    <div class="line"></div>
+
+    <div class="container-2">
+        <div>
+            <img src="assets/mobile-0819.jpg" class="img-2" alt="">
+        </div>
+        <div class="content-2">
+            <span>Download your shows to watch offline</span>
+            <span>Save your favourites easily and always have something to watch.</span>
+        </div>
+    </div>
+</body>
+
+</html>
