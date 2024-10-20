@@ -1,0 +1,34 @@
+.no::before{
+    content: attr(data-social);
+    position: absolute;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    border-radius: 100px;
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0;
+    transition: 200ms ease;
+}
+
+.no::after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 0;
+    /* border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 10px solid black; */
+    transform: translateY(0) rotate(25deg);
+    opacity: 1;
+}
+
+.no:hover::before{
+    transform: translateY(-50px) rotate(1deg);
+    opacity: 1;
+}
+
+.no:hover::after{
+    transform: translateY(-42px) rotate(0);
+    opacity: 1;
+}
