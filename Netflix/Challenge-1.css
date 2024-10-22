@@ -102,7 +102,7 @@ nav img {
   cursor: pointer;
 }
 
-.main input {
+.main input, .signUp input {
   padding: 2vmin 2.8vmin;
   background-color: rgba(0, 0, 0, 0.37);
   color: white;
@@ -192,4 +192,77 @@ nav img {
 .img-2 {
   height: auto;
   width: 57vmin;
+}
+
+.faqBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.faqBox>h2{
+  text-align: center;
+  color: white;
+  margin-top: 5vmin;
+  margin-bottom: 3.5vmin;
+}
+
+.faq{
+  width: 65vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2vmin;
+  margin-bottom: 6vmin;
+}
+
+.Q{
+  background-color: gray;
+  color: black;
+  padding: 2vmin 6vmin;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Q:hover{
+  background-color:rgba(255, 255, 255, 0.075) ;
+  color: white;
+  
+}
+
+footer{
+  width: 70vw;
+  margin: auto;
+  color: gray;
+  padding: 8vmin 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5vmin;
+}
+
+footer span{
+  text-decoration: underline;
+}
+
+.footer{
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer ul{
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6vmin;
+  
+}
+
+.footer a{
+  color: gray;
+  
 }
