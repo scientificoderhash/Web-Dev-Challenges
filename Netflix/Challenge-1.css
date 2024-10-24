@@ -273,7 +273,5 @@ footer span{
 }
 
 .hidden{
-  display: flex;
-  flex-direction: column;
   display: none;
 }
