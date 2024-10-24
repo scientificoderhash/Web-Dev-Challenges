@@ -1,13 +1,8 @@
-let a = document.body.querySelector(".Q-1");
-let b = document.body.querySelector(".a");
+const questions = document.querySelectorAll('.faq-section .Q');
 
-let count = 1;
-a.addEventListener("click",() => {
-    if (count % 2 != 0) {
-      b.classList.remove("hidden");
-      count++;
-    }else{
-        b.classList.add("hidden");
-        count++
-    }
-});
+questions.forEach((question)=>{
+  question.addEventListener('click', ()=>{
+    const answer = question.nextElementSibling;
+    answer.classList.toggle('hidden');
+  })
+})
