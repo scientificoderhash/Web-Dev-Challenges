@@ -23,11 +23,12 @@ main{
     background-color: rgb(35, 32, 32);
     border-radius: 20px;
     display: flex;
-    gap: 20px;
+    gap: 2vmin;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 5px 20px;
+    position: relative;
 }
 
 /* .main{
@@ -41,15 +42,18 @@ main{
 
 .logo{
     color: orange;
-    font-size: 45px;
+    font-size: 10vmin;
+    top: 2px;
+    position: absolute;
 }
 
 .heading{
-    font-size: 1.5rem;
+    margin-top: 7vmin;
+    font-size: 5vmin;
 }
 
 .sub-heading{
-    font-size: 1.2rem;
+    font-size: 3vmin;
     color: rgb(147, 143, 143);
 }
 
@@ -63,7 +67,7 @@ main{
 .no{
     background-color: rgb(97, 94, 94);
     border-radius: 50%;
-    padding: 8px 12px;
+    padding: 1vmin 2vmin
 }
 
 .no:hover{
@@ -88,12 +92,36 @@ main{
 
 .submit button{
     border: none;
-    padding: 10px 0px;
+    padding: 1vmin 0px;
     background-color: inherit;
-    font-size: 17px;
+    font-size: 3vmin;
     font-weight: 700;
 }
 
 .submit button:hover{
     cursor: pointer;
+}
+
+.container{
+    width: 100%;
+    line-height: 6vmin;
+}
+
+.thanks{
+    font-size: 7vmin;
+    width: 100%;
+    text-align: center;
+}
+.message{
+    font-size: 2vmin;
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width:500px) {
+    .rater{
+        display: flex;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
 }
