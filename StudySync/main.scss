@@ -41,6 +41,12 @@ header{
     align-items: center;
     margin-top: 3vmin;
     margin-bottom: 3vmin;
+    .logo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
     span{
         font-weight: 700;
         font-size: 5vmin;
@@ -83,7 +89,7 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 11vmin;
-    @media screen and(max-width: 800px) {
+    @media screen and (max-width: 800px) {
         display: flex;
         flex-direction: column;
     }
@@ -96,7 +102,7 @@ main{
         justify-content: center;
         align-items: flex-start;
         gap: 6vmin;
-        @media screen and(max-width: 800px){
+        @media screen and (max-width: 800px){
             align-items: center;
             gap: 3vmin;
         }
@@ -106,7 +112,7 @@ main{
             display: flex;
             flex-direction: column;
             gap: 2.5vmin;
-            @media screen and(max-width: 800px){
+            @media screen and (max-width: 800px){
                 align-items: center;
                 gap: 1.5vmin;
             }
@@ -121,7 +127,7 @@ main{
     }
     .graphic{
         grid-column: 2/3;
-        @media screen and(max-width: 800px){
+        @media screen and (max-width: 800px){
             display: flex;
             justify-content: center;
             margin-top: 3vmin;
@@ -131,7 +137,7 @@ main{
             width: 100%;
             border-radius: 2.5vmin;
             overflow: hidden;
-            @media screen and(max-width: 800px){
+            @media screen and (max-width: 800px){
                 width: 60vw;
             }
         }
@@ -139,13 +145,13 @@ main{
     .buttons{
         .start{
             @include primaryBtn(rgb(81, 0, 128));
-            @media screen and(max-width: 800px){
+            @media screen and (max-width: 800px){
                 margin: 0px 2vmin;
             }
         }
         .trial{
             @include primaryBtn(rgb(36, 36, 36));
-            @media screen and(max-width: 800px){
+            @media screen and (max-width: 800px){
                 margin: 0px 2vmin;
             }
         }
@@ -254,4 +260,109 @@ main{
         }
         
     }
+}
+
+.testimonials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vmin 0px;
+    gap: 3vmin;
+    .heading{
+        text-align: center;
+    }
+    .reviews{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 3vmin;
+        @media screen and (max-width: 600px){
+            flex-direction: column;
+        }
+        .review{
+            border: 1px solid black;
+            border-radius: 1.5vmin;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1vmin;
+            height: min-content;
+            padding: 1vmin 1.5vmin;
+            p, .occupation{
+                text-align: center;
+                font-size: 0.9rem;
+                color: rgb(66, 66, 66);
+            }
+            .face{
+                img{
+                    height: 15vmin;
+                }
+            }
+            .name{
+                color: rgb(109, 0, 172);
+                font-weight: 550;
+                text-align: center;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+.newsletter{
+    background-color: rgba(128, 128, 128, 0.267);
+    border-radius: 1vmin;
+    height: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vmin;
+    .cover{
+        img{
+            grid-column: 1/2;
+            width: 100%;
+            height: 100%;
+            border-radius: 1vmin;
+        }
+    }
+    .main_content{
+        padding: 0vmin 2vmin;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 7%;
+        .heading{
+            div{
+                font-size: 4vmin;
+                font-weight: 650;
+                color: rgb(124, 0, 196);
+            }
+            p{
+                font-size: 0.9rem;
+            }
+        }
+        .details{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            .email{
+                // font-size: 1.2rem;
+                padding: 0.85vmin 2vmin;
+                border-radius: 0.8vmin;
+                border: none
+            }
+            button{
+                @include primaryBtn(rgb(124, 0, 196));
+                padding: 1vmin 2vmin;
+            }
+        }
+        .terms{
+            font-size: 0.9rem;
+        }
+    }
+    margin-bottom: 3vmin;
 }
