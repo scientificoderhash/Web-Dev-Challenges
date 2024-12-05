@@ -318,7 +318,14 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2vmin;
+    @media screen and (max-width: 650px){
+        display: flex;
+        padding: 3vmin 2vmin;
+    }
     .cover{
+        @media screen and (max-width: 650px){
+            display: none;
+        }
         img{
             grid-column: 1/2;
             width: 100%;
@@ -333,7 +340,13 @@ main{
         justify-content: center;
         align-items: flex-start;
         gap: 7%;
+        @media screen and (max-width: 650px){
+            
+        }
         .heading{
+            @media screen and (max-width: 650px){
+                line-height: 5vmin;
+            }
             div{
                 font-size: 4vmin;
                 font-weight: 650;
@@ -349,6 +362,7 @@ main{
             justify-content: center;
             align-items: center;
             gap: 7px;
+            margin: 9px 0px;
             .email{
                 // font-size: 1.2rem;
                 padding: 0.85vmin 2vmin;
@@ -362,7 +376,87 @@ main{
         }
         .terms{
             font-size: 0.9rem;
+            line-height: 18px;
         }
     }
     margin-bottom: 3vmin;
+}
+
+ul{
+    list-style-type: none
+}
+
+footer{
+    @include main;
+    justify-content: center;
+    margin: 3vmin auto;
+    padding-bottom: 5vmin;
+    @media screen and(max-width:800px) {
+        padding-bottom: 5vmin;
+    }
+    .footer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4vmin;
+        padding: 0px 10px;
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            gap: 4vmin;
+        }
+        .head_section{
+            display: flex;
+            flex-direction: column;
+            gap: 3vmin;
+            .heading{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 5px;
+            }
+            p{
+                color: rgb(128, 128, 128);
+                font-size: 0.85rem;
+            }
+            .handles{
+                svg{
+                    height: 3vmin;
+                    fill: rgb(128, 128, 128);
+                }
+            }
+        }
+        .items{
+            display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 4vmin;
+        @media screen and (max-width: 500px) {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            
+        }
+            .item{
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+            width: min-content;
+            @media screen and (max-width: 500px){
+                width: max-content;
+            }
+            .main{
+                font-weight: 600;
+            }
+            ul{
+                color: rgb(128, 128, 128);
+                font-size: 0.9rem;
+                display: flex;
+                flex-direction: column;
+                gap: 7px;
+            }
+        }
+        }
+    }
 }
