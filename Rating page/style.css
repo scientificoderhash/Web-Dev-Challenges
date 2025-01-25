@@ -23,12 +23,11 @@ main{
     background-color: rgb(35, 32, 32);
     border-radius: 20px;
     display: flex;
-    gap: 2vmin;
+    gap: 20px;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     padding: 5px 20px;
-    position: relative;
 }
 
 /* .main{
@@ -42,18 +41,15 @@ main{
 
 .logo{
     color: orange;
-    font-size: 10vmin;
-    top: 2px;
-    position: absolute;
+    font-size: 45px;
 }
 
 .heading{
-    margin-top: 7vmin;
-    font-size: 5vmin;
+    font-size: 1.5rem;
 }
 
 .sub-heading{
-    font-size: 3vmin;
+    font-size: 1.2rem;
     color: rgb(147, 143, 143);
 }
 
@@ -67,7 +63,14 @@ main{
 .no{
     background-color: rgb(97, 94, 94);
     border-radius: 50%;
-    padding: 1vmin 2vmin
+    padding: 1em;
+    height: 6vmin;
+    width: 6vmin;
+    box-sizing: border-box;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 5px 10px black;
 }
 
 .no:hover{
@@ -92,9 +95,9 @@ main{
 
 .submit button{
     border: none;
-    padding: 1vmin 0px;
+    padding: 10px 0px;
     background-color: inherit;
-    font-size: 3vmin;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -103,25 +106,23 @@ main{
 }
 
 .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5vmin;
     width: 100%;
-    line-height: 6vmin;
 }
 
 .thanks{
-    font-size: 7vmin;
-    width: 100%;
-    text-align: center;
+    font-size: 5vmin;
 }
+
 .message{
-    font-size: 2vmin;
     width: 100%;
     text-align: center;
 }
 
-@media (max-width:500px) {
-    .rater{
-        display: flex;
-        flex-wrap: wrap;
-        /* flex-direction: column; */
-    }
+.message p{
+    line-height: 23px;
 }
