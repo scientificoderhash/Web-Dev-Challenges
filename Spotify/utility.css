@@ -60,3 +60,6 @@
     background: #888; /* Color when the thumb is active */
 }
 
+.pointer:hover{
+    cursor: pointer;
+}
