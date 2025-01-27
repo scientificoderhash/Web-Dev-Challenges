@@ -1,17 +1,22 @@
-let newTask = document.body.querySelector(".main")
-let submitTask = document.body.querySelector(".submit")
+let newTask = document.body.querySelector(".main");
+let content = document.body.querySelector(".content");
 
 newTask.addEventListener("click",()=>{
     newTask.innerHTML = `<div class="task-creator">
-    <textarea type="text" id="input" placeholder="Your new Task......." required></textarea><button id="submit-btn">Done</button>
-</div>`
+    <textarea type="text" id="input" placeholder="Your new Task......." rows="1" required></textarea>
+    <button id="submit-btn">Add Task</button>
+    </div>`;
+    var taskValue = document.body.querySelector("#input");
+    var addTask = document.body.querySelector("#submit-btn");
 
-}, {once:true})
+    taskValue.addEventListener("click",(e)=>{
+        e.stopPropagation();
+    });
 
-setTimeout(() => {
-    submitTask.addEventListener("change", ()=>{
-        let content = document.body.querySelector("#input").innerHTML
-
-        
-    })
-}, 1000);
+    addTask.addEventListener("click",(e)=>{
+        e.stopPropagation();
+        content.innerHTML += `<input type="checkbox" name="Task" class="task">${taskValue.value}`;
+        // newTask.innerHTML = `<button id="new-task">New Task</button>`;
+        newTask.innerHTML = `<p>+ Add New Task</p>`;
+    });
+});

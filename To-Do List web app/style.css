@@ -61,14 +61,18 @@ h1{
 
 #input{
     width: 70%;
-    /* outline: none; */
+    outline: none;
     padding: 10px;
     font-size: 15px;
     background-color: #C42021;
     color: white;
     border: none;
-    border-radius: 2rem;
+    /* border-radius: 2rem; */
     /* height: 50px; */
+}
+
+#input:focus{
+    border-bottom: 1.5px solid #F3FFB9;
 }
 
 #input::placeholder{
@@ -76,15 +80,20 @@ h1{
 }
 
 #submit-btn{
-    background-color: darkred;
+    background-color: #C42021;
     color: #F3FFB9;
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 50px;
     font-weight: 800;
+    border: none;
+    padding: 10px 20px;
 }
 
+#submit-btn:hover{
+    background-color: darkred;
+    cursor: pointer;
+}
 
 .content{
-    display: grid;
-    grid-template-columns: 50px 1fr 1fr 50px;
+    
 }
