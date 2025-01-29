@@ -15,7 +15,13 @@ newTask.addEventListener("click",()=>{
 
     addTask.addEventListener("click",(e)=>{
         e.stopPropagation();
-        content.innerHTML += `<input type="checkbox" name="Task" class="task">${taskValue.value}`;
+        if(taskValue.value == ""){
+            alert("task area is empty!");
+        }
+        content.innerHTML += `<div class="newTask">
+        <input type="checkbox" id="Task" class="task">
+        <label for="Task" class="task">${taskValue.value}</label>
+        </div>`;
         // newTask.innerHTML = `<button id="new-task">New Task</button>`;
         newTask.innerHTML = `<p>+ Add New Task</p>`;
     });
