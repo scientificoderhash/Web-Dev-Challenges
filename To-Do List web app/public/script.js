@@ -26,3 +26,9 @@ newTask.addEventListener("click",()=>{
         newTask.innerHTML = `<p>+ Add New Task</p>`;
     });
 });
+
+let newCatg = document.body.querySelector("#svg-add");
+
+newCatg.addEventListener("click",()=>{
+    
+})

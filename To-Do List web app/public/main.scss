@@ -1,0 +1,101 @@
+@import "mixin";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+
+$background-color: #2C3E50;
+$text-color: #ECF0F1;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+header {
+    @include flex(row, space-between, center);
+    width: 100%;
+    background-color: $background-color;
+    padding: 10px 0px;
+    border-bottom: 0px solid black;
+    .header {
+        @include flex(row, space-between, center);
+        width: 100%;
+        padding: 0px 15px;
+        .profile {
+            @include flex(row, center, center);
+
+            .photo {
+                height: 30px;
+                background-color: $text-color;
+                width: 30px;
+                border-radius: 100%;
+            }
+
+            p {
+                text-decoration: none;
+                color: $text-color;
+            }
+        }
+    }
+
+    h1 {
+        color: $text-color;
+        text-decoration: underline solid #3498DB;
+
+        @media screen and (max-width: 600px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    #add-task {
+        // position: absolute;
+        // right: 25px;
+    }
+
+    #add-task:hover {
+        cursor: pointer;
+    }
+}
+
+.headings {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 250px calc(100% - 250px);
+
+    aside {
+        background-color: $background-color;
+        height: calc(100vh - (39.2px + 20px));
+
+        .aside {
+            @include flex(column, flex-start, center);
+            padding: 7px 7px 0px 7px;
+            color: $text-color;
+
+            .groups {
+                @include flex(row, space-between, center);
+                width: 100%;
+
+                #svg-add:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+
+    main {
+        background-color: $text-color;
+        height: calc(100vh - (39.2px + 20px));
+
+        .main {
+            @include flex(column, flex-start, center);
+            padding: 7px 7px 0px 7px;
+            color: $background-color;
+
+        }
+    }
+}
