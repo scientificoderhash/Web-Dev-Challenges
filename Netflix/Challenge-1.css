@@ -91,6 +91,7 @@ nav img {
   border-radius: 8px;
   font-weight: 700;
   cursor: pointer;
+  border: none;
 }
 
 .btn-3 {
