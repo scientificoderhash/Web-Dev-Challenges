@@ -1,34 +1,18 @@
-let newTask = document.body.querySelector(".main");
-let content = document.body.querySelector(".content");
+function addCategory() {
+  const new_group = document.body.querySelector("#svg-add");
+  new_group.style.display = "none"
+  const add_group = document.body.querySelector("#add_group");
+  add_group.style.display = "block";
 
-newTask.addEventListener("click",()=>{
-    newTask.innerHTML = `<div class="task-creator">
-    <textarea type="text" id="input" placeholder="Your new Task......." rows="1" required></textarea>
-    <button id="submit-btn">Add Task</button>
-    </div>`;
-    var taskValue = document.body.querySelector("#input");
-    var addTask = document.body.querySelector("#submit-btn");
-
-    taskValue.addEventListener("click",(e)=>{
-        e.stopPropagation();
-    });
-
-    addTask.addEventListener("click",(e)=>{
-        e.stopPropagation();
-        if(taskValue.value == ""){
-            alert("task area is empty!");
-        }
-        content.innerHTML += `<div class="newTask">
-        <input type="checkbox" id="Task" class="task">
-        <label for="Task" class="task">${taskValue.value}</label>
-        </div>`;
-        // newTask.innerHTML = `<button id="new-task">New Task</button>`;
-        newTask.innerHTML = `<p>+ Add New Task</p>`;
-    });
-});
-
-let newCatg = document.body.querySelector("#svg-add");
-
-newCatg.addEventListener("click",()=>{
-    
-})
+  add_group.addEventListener("blur", () => {
+    let group = add_group.value.trim();
+    if(group){
+      let li = document.createElement("li");
+      li.textContent = group;
+      document.body.querySelector("#all_groups").appendChild(li);
+    }
+    add_group.value = "";
+    add_group.style.display = "none";
+    new_group.style.display = "block";
+  })
+}

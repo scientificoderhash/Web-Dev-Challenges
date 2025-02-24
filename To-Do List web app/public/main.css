@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Montserrat", sans-serif;
+  font-family: "caveat";
 }
 
 body {
@@ -16,7 +16,7 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background-color: #2C3E50;
+  background-color: #F7DAD9;
   padding: 10px 0px;
   border-bottom: 0px solid black;
 }
@@ -33,6 +33,17 @@ header .header .profile {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  color: #5C4B51;
+}
+header .header .profile button {
+  background-color: #EDB8B5;
+  border-radius: 12px;
+  padding: 7px 15px;
+  box-shadow: 0 2px 4px rgba(237, 184, 181, 0.3);
+}
+header .header .profile button:hover {
+  background-color: #D4A6A3;
+  cursor: pointer;
 }
 header .header .profile .photo {
   height: 30px;
@@ -42,10 +53,9 @@ header .header .profile .photo {
 }
 header .header .profile p {
   text-decoration: none;
-  color: #ECF0F1;
 }
 header h1 {
-  color: #ECF0F1;
+  color: #5C4B51;
   -webkit-text-decoration: underline solid #3498DB;
           text-decoration: underline solid #3498DB;
 }
@@ -54,8 +64,12 @@ header h1 {
     font-size: 1.5rem;
   }
 }
+header #add-task {
+  fill: #5C4B51;
+}
 header #add-task:hover {
   cursor: pointer;
+  fill: #EDB8B5;
 }
 
 .headings {
@@ -64,8 +78,9 @@ header #add-task:hover {
   grid-template-columns: 250px calc(100% - 250px);
 }
 .headings aside {
-  background-color: #2C3E50;
+  background-color: #F0E6E6;
   height: calc(100vh - 59.2px);
+  border-radius: 4px;
 }
 .headings aside .aside {
   display: flex;
@@ -73,7 +88,7 @@ header #add-task:hover {
   justify-content: flex-start;
   align-items: center;
   padding: 7px 7px 0px 7px;
-  color: #ECF0F1;
+  color: #5C4B51;
 }
 .headings aside .aside .groups {
   display: flex;
@@ -82,11 +97,18 @@ header #add-task:hover {
   align-items: center;
   width: 100%;
 }
+.headings aside .aside .groups #add_group {
+  display: none;
+}
+.headings aside .aside .groups #svg-add {
+  fill: #5C4B51;
+}
 .headings aside .aside .groups #svg-add:hover {
   cursor: pointer;
+  fill: #EDB8B5;
 }
 .headings main {
-  background-color: #ECF0F1;
+  background-color: #FFF9F5;
   height: calc(100vh - 59.2px);
 }
 .headings main .main {

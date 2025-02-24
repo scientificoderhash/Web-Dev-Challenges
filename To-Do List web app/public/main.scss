@@ -7,7 +7,7 @@ $text-color: #ECF0F1;
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'caveat';
 }
 
 body {
@@ -18,7 +18,7 @@ body {
 header {
     @include flex(row, space-between, center);
     width: 100%;
-    background-color: $background-color;
+    background-color: #F7DAD9;
     padding: 10px 0px;
     border-bottom: 0px solid black;
     .header {
@@ -27,6 +27,18 @@ header {
         padding: 0px 15px;
         .profile {
             @include flex(row, center, center);
+            color: #5C4B51;
+
+            button{
+                background-color: #EDB8B5;
+                border-radius: 12px;
+                padding: 7px 15px;
+                box-shadow: 0 2px 4px rgba(237, 184, 181, 0.3);
+            }
+            button:hover{
+                background-color: #D4A6A3 ;
+                cursor: pointer;
+            }
 
             .photo {
                 height: 30px;
@@ -37,13 +49,12 @@ header {
 
             p {
                 text-decoration: none;
-                color: $text-color;
             }
         }
     }
 
     h1 {
-        color: $text-color;
+        color: #5C4B51;
         text-decoration: underline solid #3498DB;
 
         @media screen and (max-width: 600px) {
@@ -51,8 +62,13 @@ header {
         }
     }
 
+    #add-task{
+        fill: #5C4B51;
+    }
+
     #add-task:hover {
         cursor: pointer;
+        fill: #EDB8B5;
     }
 }
 
@@ -62,20 +78,26 @@ header {
     grid-template-columns: 250px calc(100% - 250px);
 
     aside {
-        background-color: $background-color;
+        background-color: #F0E6E6;
         height: calc(100vh - (39.2px + 20px));
-
+        border-radius: 4px;
         .aside {
             @include flex(column, flex-start, center);
             padding: 7px 7px 0px 7px;
-            color: $text-color;
+            color: #5C4B51;
 
             .groups {
                 @include flex(row, space-between, center);
                 width: 100%;
-
+                #add_group{
+                    display: none;
+                }
+                #svg-add{
+                    fill: #5C4B51;
+                }
                 #svg-add:hover {
                     cursor: pointer;
+                    fill: #EDB8B5;
                 }
             }
         }
@@ -83,7 +105,7 @@ header {
 
 
     main {
-        background-color: $text-color;
+        background-color: #FFF9F5;
         height: calc(100vh - (39.2px + 20px));
 
         .main {
