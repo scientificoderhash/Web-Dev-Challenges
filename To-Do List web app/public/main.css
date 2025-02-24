@@ -91,14 +91,26 @@ header #add-task:hover {
   color: #5C4B51;
 }
 .headings aside .aside .groups {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto max-content;
   align-items: center;
   width: 100%;
 }
 .headings aside .aside .groups #add_group {
   display: none;
+  background-color: #F0E6E6;
+  margin-top: 10px;
+}
+.headings aside .aside .groups #add_group:focus {
+  border: none;
+  border-bottom: 1px solid #5C4B51;
+  outline: none;
+}
+.headings aside .aside .groups #add_group::-moz-placeholder {
+  font-size: 17px;
+}
+.headings aside .aside .groups #add_group::placeholder {
+  font-size: 17px;
 }
 .headings aside .aside .groups #svg-add {
   fill: #5C4B51;
@@ -106,6 +118,28 @@ header #add-task:hover {
 .headings aside .aside .groups #svg-add:hover {
   cursor: pointer;
   fill: #EDB8B5;
+}
+.headings aside .aside #all_groups {
+  margin-top: 20px;
+  align-self: flex-start;
+  border: none;
+  width: 100%;
+}
+.headings aside .aside #all_groups li {
+  margin-top: 10px;
+  width: 100%;
+  font-size: 19px;
+  transition: all 0.1s linear;
+}
+.headings aside .aside #all_groups li:hover {
+  border-bottom: 1px solid black;
+  box-shadow: -3px 3px 5px black;
+  border-bottom-left-radius: 4px;
+  font-size: 22px;
+  font-weight: 700;
+  transform: translateX(3px);
+  padding-left: 5px;
+  transition: all 0.1s linear;
 }
 .headings main {
   background-color: #FFF9F5;

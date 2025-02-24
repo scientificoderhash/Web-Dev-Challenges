@@ -1,8 +1,16 @@
 function addCategory() {
   const new_group = document.body.querySelector("#svg-add");
-  new_group.style.display = "none"
+  const new_group_name = document.body.querySelector("#group-name")
+  
+  const gp = document.body.querySelectorAll(".gp");
+  gp.forEach((e) => {
+    e.style.display = "none";
+  })
+
   const add_group = document.body.querySelector("#add_group");
   add_group.style.display = "block";
+
+  add_group.focus();
 
   add_group.addEventListener("blur", () => {
     let group = add_group.value.trim();
@@ -13,6 +21,9 @@ function addCategory() {
     }
     add_group.value = "";
     add_group.style.display = "none";
-    new_group.style.display = "block";
+
+    gp.forEach((e) => {
+      e.style.display = "block";
+    })
   })
 }

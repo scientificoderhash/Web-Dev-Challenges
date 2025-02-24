@@ -87,10 +87,24 @@ header {
             color: #5C4B51;
 
             .groups {
-                @include flex(row, space-between, center);
+                // @include flex(row, space-between, center);
+                display: grid;
+                grid-template-columns: auto max-content;
+                align-items: center;
                 width: 100%;
                 #add_group{
                     display: none;
+                    background-color: #F0E6E6;
+                    margin-top: 10px;
+                    // font-size: 1.1rem;
+                    &:focus{
+                        border: none;
+                        border-bottom: 1px solid #5C4B51;
+                        outline: none;
+                    }
+                    &::placeholder{
+                        font-size: 17px;
+                    }
                 }
                 #svg-add{
                     fill: #5C4B51;
@@ -100,10 +114,33 @@ header {
                     fill: #EDB8B5;
                 }
             }
+
+            #all_groups{
+                margin-top: 20px;
+                align-self: flex-start;
+                border: none;
+                width: 100%;
+                li{
+                    margin-top: 10px;
+                    width: 100%;
+                    font-size: 19px;
+                    transition: all 0.1s linear;
+                    &:hover{
+                        border-bottom: 1px solid black;
+                        box-shadow: -3px 3px 5px black;
+                        border-bottom-left-radius: 4px;
+                        font-size: 22px;
+                        font-weight: 700;
+                        transform: translateX(3px);
+                        padding-left: 5px;
+                        transition: all 0.1s linear;
+                    }
+                }
+            }
         }
     }
 
-
+    
     main {
         background-color: #FFF9F5;
         height: calc(100vh - (39.2px + 20px));
