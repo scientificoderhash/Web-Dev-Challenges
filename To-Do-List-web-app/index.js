@@ -11,13 +11,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({extended : true}));
 app.use(express.json());
 
-let data = [
-    {
-        name : "Krishna",
-        username : "raghav.5896@gmail.com",
-        password : "1234"
-    }
-]
+let data = []
 
 let allTasks = [];
 
