@@ -67,7 +67,7 @@ function addNewTask(event) {
         category: category.value
     }
 
-    fetch('http://localhost:3000/newtask', {
+    fetch('/newtask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -215,7 +215,7 @@ function editNewTask(event) {
         category: category.value
     }
 
-    fetch('http://localhost:3000/edittask', {
+    fetch('/edittask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -252,7 +252,7 @@ function deleteTask(event) {
     let taskDiv = event.target.closest('.task');
     let taskId = taskDiv.getAttribute('data-id');
 
-    fetch('http://localhost:3000/deletetask', {
+    fetch('/deletetask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
