@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do list</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="stylesheet" href="main.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+
+      <div class="profile">
+        <button><a href="http://localhost:3000/login" style="text-decoration: none; color: black;">Get Started</a></button>
+      </div>
+
+      <h1>To-Do List</h1>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" id="add-task">
+        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+        <path
+          d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+      </svg>
+    </div>
+  </header>
+
+  <div class="headings">
+    <!--blue = #3498DB, dark-blue = #2C3E50, white = #ECF0F1, box-shadow: 0 14px 28px rgba(0, 0, 0, .2), 0 10px 10px rgba(0, 0, 0, .2);, green = #495456, grey = #2ECC71-->
+    <aside>
+      <div class="aside">
+        <div class="groups">
+          <p>New Group...</p>
+          <div class="add_category">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="30px" id="svg-add">
+              <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path
+                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z" />
+            </svg>
+          </div>
+        </div>
+        <ul>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <form action="" onsubmit="return false;">
+        <div class="heading">
+          <p>+ Add New Task</p>
+          <!-- input field here -->
+        </div>
+      </form>
+
+      <div class="content"></div>
+    </main>
+
+  </div>
+</body>
+
+</html>
