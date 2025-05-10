@@ -220,9 +220,20 @@ header #add-task:hover {
   /* Increased padding */
   position: relative;
   line-height: 120%;
+  width: 80%;
   width: 50%;
   box-sizing: border-box;
   /* Quill Editor Styling */
+}
+@media (max-width: 900px) {
+  .headings main .background .newTask {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  .headings main .background .newTask {
+    width: 95%;
+  }
 }
 .headings main .background .newTask #formBar {
   display: flex;

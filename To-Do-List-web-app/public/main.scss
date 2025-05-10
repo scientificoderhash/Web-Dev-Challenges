@@ -231,6 +231,15 @@ header {
                 /* Increased padding */
                 position: relative;
                 line-height: 120%;
+                width: 80%;
+
+                @media (max-width: 900px) {
+                    width: 90%;
+                }
+
+                @media (max-width: 600px) {
+                    width: 95%;
+                }
                 width: 50%;
                 box-sizing: border-box; //padding is included in width
 
