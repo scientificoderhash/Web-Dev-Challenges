@@ -90,7 +90,7 @@ function addNewTask(event) {
             taskDiv.setAttribute('data-id', data.id);
             taskDiv.innerHTML = `<div style="display: flex;">
               <input type="checkbox" name="checkbox" id="checkbox">
-              <label for="checkbox" id="taskHead">
+              <label for="checkbox" class="taskHead">
                 ${data.title}
               </label>
               <svg width="25px" class="editTask" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
@@ -112,11 +112,11 @@ function addNewTask(event) {
               </svg>
             </div>
 
-            <div id="deadline"><i>
+            <div class="deadline"><i>
                 ${data.date}
               </i></div>
             <hr>
-            <div id="taskDesc">
+            <div class="taskDesc">
               ${data.description}
             </div>
             <button onclick="deleteTask(event)" class="deleteTask">Delete</button>
@@ -179,10 +179,10 @@ document.querySelector('.content').addEventListener('click', (e) => {
           </form>`;
         
         //task values
-        let taskHead = document.body.querySelector('#taskHead').innerText;
-        let taskDesc = document.body.querySelector('#taskDesc').innerText;
-        let deadline = document.body.querySelector('#deadline').innerText;
-        let categ = document.body.querySelector('.categ').innerText;
+        let taskHead = taskDiv.querySelector('.taskHead').innerText;
+        let taskDesc = taskDiv.querySelector('.taskDesc').innerText;
+        let deadline = taskDiv.querySelector('.deadline').innerText;
+        let categ = taskDiv.querySelector('.categ').innerText;
         //form values
         let title = document.body.querySelector('#title');
         let description = document.body.querySelector('#description');
@@ -194,6 +194,7 @@ document.querySelector('.content').addEventListener('click', (e) => {
         date.value = deadline.trim();
         category.value = categ.trim();
 
+        window.currentEditTaskDiv = taskDiv;
         window.currentEditTaskId = taskId;
 
         background.classList.remove("hidden");
@@ -231,14 +232,11 @@ function editNewTask(event) {
     })
     .then(data => {
         //ui update
-        let taskHead = document.body.querySelector('#taskHead');
-        let taskDesc = document.body.querySelector('#taskDesc');
-        let deadline = document.body.querySelector('#deadline');
-        let categ = document.body.querySelector('.categ');
-        taskHead.innerText = data.title;
-        taskDesc.innerText = data.description;
-        deadline.innerText = data.date;
-        categ.innerText = data.category;
+        let taskDiv = window.currentEditTaskDiv;
+        taskDiv.querySelector('.taskHead').innerText = data.title;
+        taskDiv.querySelector('.taskDesc').innerText = data.description;
+        taskDiv.querySelector('.deadline').innerText = data.date;
+        taskDiv.querySelector('.categ').innerText = data.category;
     })
     .catch(error => {
         console.error('Error:', error);
