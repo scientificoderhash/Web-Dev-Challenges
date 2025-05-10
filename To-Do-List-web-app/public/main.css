@@ -285,6 +285,22 @@ header #add-task:hover {
   content: "Mark as done";
   color: #5C4B51;
 }
+.headings main .content .task .taskDesc {
+  overflow: auto;
+  /* or hidden, depending on your design */
+  word-break: break-word;
+  /* Prevent long words from overflowing */
+  /* Ensure Quill content stays within the taskDesc */
+}
+.headings main .content .task .taskDesc .ql-editor {
+  padding: 0;
+  margin: 0;
+}
+.headings main .content .task .taskDesc ul,
+.headings main .content .task .taskDesc ol {
+  padding-left: 1em;
+  /* Adjust as needed */
+}
 .headings main .content .task .editTask {
   cursor: pointer;
 }

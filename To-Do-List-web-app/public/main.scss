@@ -21,35 +21,39 @@ header {
     background-color: #F7DAD9;
     padding: 10px 0px;
     border-bottom: 0px solid black;
+
     .header {
         @include flex(row, space-between, center);
         width: 100%;
         padding: 0px 15px;
 
-        .hamburger{
+        .hamburger {
             display: none;
-            @media (max-width: 600px){
+
+            @media (max-width: 600px) {
                 display: block;
                 width: 8%;
             }
         }
+
         .profile {
             @include flex(row, center, center);
             color: #5C4B51;
             gap: 5px;
 
-            @media (max-width: 600px){
+            @media (max-width: 600px) {
                 flex-direction: column;
             }
 
-            button{
+            button {
                 background-color: #EDB8B5;
                 border-radius: 12px;
                 padding: 7px 15px;
                 box-shadow: 0 2px 4px rgba(237, 184, 181, 0.3);
             }
-            button:hover{
-                background-color: #D4A6A3 ;
+
+            button:hover {
+                background-color: #D4A6A3;
                 cursor: pointer;
             }
 
@@ -75,7 +79,7 @@ header {
         }
     }
 
-    #add-task{
+    #add-task {
         fill: #5C4B51;
     }
 
@@ -89,11 +93,12 @@ header {
     max-width: 100%;
     display: grid;
     grid-template-columns: 250px calc(100% - 250px);
+
     @media (max-width: 900px) and (min-width: 600px) {
         grid-template-columns: 30vw calc(100% - 30vw);
     }
 
-    @media (max-width: 600px){
+    @media (max-width: 600px) {
         grid-template-columns: 100%;
     }
 
@@ -101,7 +106,7 @@ header {
         background-color: #F0E6E6;
         height: calc(100vh - (39.2px + 20px));
         border-radius: 4px;
-        
+
         .aside {
             @include flex(column, flex-start, center);
             padding: 7px 7px 0px 7px;
@@ -113,41 +118,48 @@ header {
                 grid-template-columns: auto max-content;
                 align-items: center;
                 width: 100%;
-                #add_group{
+
+                #add_group {
                     display: none;
                     background-color: #F0E6E6;
                     margin-top: 10px;
+
                     // font-size: 1.1rem;
-                    &:focus{
+                    &:focus {
                         border: none;
                         border-bottom: 1px solid #5C4B51;
                         outline: none;
                     }
-                    &::placeholder{
+
+                    &::placeholder {
                         font-size: 17px;
                     }
                 }
-                #svg-add{
+
+                #svg-add {
                     fill: #5C4B51;
                 }
+
                 #svg-add:hover {
                     cursor: pointer;
                     fill: #EDB8B5;
                 }
             }
 
-            #all_groups{
+            #all_groups {
                 margin-top: 20px;
                 align-self: flex-start;
                 border: none;
                 width: 100%;
-                li{
+
+                li {
                     @include flex(row, space-between, center);
                     margin-top: 10px;
                     width: 100%;
                     font-size: 19px;
                     transition: all 0.1s linear;
-                    &:hover{
+
+                    &:hover {
                         border-bottom: 1px solid black;
                         box-shadow: -3px 3px 5px black;
                         border-bottom-left-radius: 4px;
@@ -157,9 +169,11 @@ header {
                         padding-left: 5px;
                         transition: all 0.1s linear;
                     }
-                    svg{
+
+                    svg {
                         fill: #5C4B51;
-                        &:hover{
+
+                        &:hover {
                             fill: #D4A6A3;
                         }
                     }
@@ -169,16 +183,18 @@ header {
     }
 
 
-    @media (max-width: 600px){
-        aside{
+    @media (max-width: 600px) {
+        aside {
             position: fixed;
             top: calc(39.2px + 29px);
             left: 0;
             width: 70vw;
-            height: calc(100vh - (39.2px + 29px)); ;
+            height: calc(100vh - (39.2px + 29px));
+            ;
             z-index: 10;
             transform: translateX(-100%);
             transition: transform 0.3s ease;
+
             &.open {
                 transform: translateX(0);
             }
@@ -188,12 +204,12 @@ header {
 
 
 
-    
+
     main {
         background-color: #FFF9F5;
         height: calc(100vh - (39.2px + 20px));
 
-        .background{
+        .background {
             height: 100vh;
             width: 100vw;
             position: absolute;
@@ -202,35 +218,37 @@ header {
             z-index: 10;
             background-color: rgba(0, 0, 0, 0.529);
 
-            .align{
+            .align {
                 height: 100%;
                 width: 100%;
                 @include flex(row, center, center);
             }
 
-            .newTask{
+            .newTask {
                 height: auto;
                 width: 50%;
-                background-color:#F7DAD9;
+                background-color: #F7DAD9;
                 border-radius: 10px;
                 padding: 15px 10px;
                 position: relative;
                 line-height: 120%;
 
-                #formBar{
+                #formBar {
                     @include flex(row, space-between, center);
                     padding-bottom: 10px;
-                    #discard{
+
+                    #discard {
                         color: red;
                         font-weight: 900;
                         cursor: pointer;
                     }
                 }
 
-                #title{
+                #title {
                     width: 100%;
                 }
-                #description{
+
+                #description {
                     width: 100%;
                 }
             }
@@ -238,36 +256,36 @@ header {
 
         .content {
             padding: 1rem;
-    columns: 4 250px;
-    column-gap: 1rem;
-    width: calc(100% - 2rem);
-    margin: 0 auto;
-    // height: 100%; // Remove this line
+            columns: 4 250px;
+            column-gap: 1rem;
+            width: calc(100% - 2rem);
+            margin: 0 auto;
+            // height: 100%; // Remove this line
 
-    @media (max-width: 900px) and (min-width: 600px) {
-        columns: 3 250px;
-    }
+            @media (max-width: 900px) and (min-width: 600px) {
+                columns: 3 250px;
+            }
 
-    @media (max-width: 600px) {
-        columns: 1 100%;
-        width: calc(100% - 2rem); // Correct width calculation
-        // margin: 0 auto;
-    }
+            @media (max-width: 600px) {
+                columns: 1 100%;
+                width: calc(100% - 2rem); // Correct width calculation
+                // margin: 0 auto;
+            }
 
             .task {
                 background-color: #EDB8B5;
-    display: inline-block; // Changed to inline-block
-    width: 100%;
-    margin-bottom: 1rem; // changed from margin: 10px
-    break-inside: avoid;
-    border-radius: 10px;
-    padding: 15px 10px;
-    position: relative;
-    padding-bottom: 30px;
-    box-sizing: border-box;
-    word-break: break-word;
+                display: inline-block; // Changed to inline-block
+                width: 100%;
+                margin-bottom: 1rem; // changed from margin: 10px
+                break-inside: avoid;
+                border-radius: 10px;
+                padding: 15px 10px;
+                position: relative;
+                padding-bottom: 30px;
+                box-sizing: border-box;
+                word-break: break-word;
 
-                .taskHead{
+                .taskHead {
                     font-weight: 600;
                     font-size: 1.3em;
                     width: 100%;
@@ -281,16 +299,35 @@ header {
                     }
                 }
 
-                .editTask{
+                .taskDesc {
+                    overflow: auto;
+                    /* or hidden, depending on your design */
+                    word-break: break-word;
+                    /* Prevent long words from overflowing */
+
+                    /* Ensure Quill content stays within the taskDesc */
+                    .ql-editor {
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    ul,
+                    ol {
+                        padding-left: 1em;
+                        /* Adjust as needed */
+                    }
+                }
+
+                .editTask {
                     cursor: pointer;
                 }
 
-                .deadline{
+                .deadline {
                     text-decoration: underline solid rgb(158, 0, 0);
                     width: 100%;
                 }
 
-                .categ{
+                .categ {
                     position: absolute;
                     bottom: 10px;
                     right: 10px;
@@ -301,6 +338,6 @@ header {
 }
 
 
-.hidden{
+.hidden {
     display: none;
 }

@@ -12,7 +12,7 @@ function createNewTask() {
             <input type="text" name="title" id="title"> <br>
 
             <label for="description">Description:-</label>
-            <textarea name="description" id="description"></textarea>
+            <div id="description"></div>
 
             <label for="date">Complete By:</label>
             <input type="date" name="date" id="date">
@@ -35,6 +35,28 @@ function createNewTask() {
 
             <input type="submit" value="Done" id="addTaskButton">
           </form>`
+
+    window.quill = new Quill('#description', {
+      theme: 'snow',
+      modules: {
+      toolbar: [
+        [{ header: [1, 2, false] }],
+        ['bold', 'italic', 'underline'],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        [{ align: [] }],
+        [{ color: []}, { background: [] }]
+      ]
+      },
+      placeholder: 'Write your task description here...'
+    });
+
+    // Customize the borders and appearance of the editor
+    const quillEditor = document.querySelector('.ql-container');
+    quillEditor.style.border = '2px solid red'; // Green border
+    quillEditor.style.borderRadius = '5px'; // Rounded corners
+    quillEditor.style.padding = '10px'; // Inner padding
+    quillEditor.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)'; // Subtle shadow
+    quillEditor.style.backgroundColor = '#f9f9f9'; // Light background color
 }
 
 function cancelTask() {
@@ -57,12 +79,12 @@ function closeForm() {
 function addNewTask(event) {
     event.preventDefault();
     let title = document.body.querySelector('#title');
-    let description = document.body.querySelector('#description');
+    // let description = document.body.querySelector('#description');
     let date = document.body.querySelector('#date');
     let category = document.body.querySelector('#category');
     const formData = {
         title: title.value,
-        description: description.value,
+        description: quill.root.innerHTML,
         date: date.value,
         category: category.value
     }
@@ -131,7 +153,8 @@ function addNewTask(event) {
 
     // Clear input fields after adding the task
     title.value = "";
-    description.value = "";
+    // description.value = "";
+    quill.root.innerHTML = "";
 
     closeForm();
 }
@@ -154,7 +177,7 @@ document.querySelector('.content').addEventListener('click', (e) => {
             <input type="text" name="title" id="title"> <br>
 
             <label for="description">Description:-</label>
-            <textarea name="description" id="description"></textarea>
+            <div id="description"></div>
 
             <label for="date">Complete By:</label>
             <input type="date" name="date" id="date">
@@ -180,7 +203,7 @@ document.querySelector('.content').addEventListener('click', (e) => {
         
         //task values
         let taskHead = taskDiv.querySelector('.taskHead').innerText;
-        let taskDesc = taskDiv.querySelector('.taskDesc').innerText;
+        let taskDesc = taskDiv.querySelector('.taskDesc').innerHTML;
         let deadline = taskDiv.querySelector('.deadline').innerText;
         let categ = taskDiv.querySelector('.categ').innerText;
         //form values
@@ -190,7 +213,8 @@ document.querySelector('.content').addEventListener('click', (e) => {
         let category = document.body.querySelector('#category');
 
         title.value = taskHead.trim();
-        description.value = taskDesc.trim();
+        // description.value = taskDesc.trim();
+        quill.root.innerHTML = taskDesc.trim();
         date.value = deadline.trim();
         category.value = categ.trim();
 
@@ -198,20 +222,25 @@ document.querySelector('.content').addEventListener('click', (e) => {
         window.currentEditTaskId = taskId;
 
         background.classList.remove("hidden");
+        window.quill = new Quill('#description', {
+            theme: 'snow'
+        });
+
+        quill.root.innerHTML = taskDesc;
     }
 })
 
 function editNewTask(event) {
     event.preventDefault();
     let title = document.body.querySelector('#title');
-    let description = document.body.querySelector('#description');
+    // let description = document.body.querySelector('#description');
     let date = document.body.querySelector('#date');
     let category = document.body.querySelector('#category');
 
     const formData = {
         id: window.currentEditTaskId,
         title: title.value,
-        description: description.value,
+        description: quill.root.innerHTML,
         date: date.value,
         category: category.value
     }
@@ -234,7 +263,7 @@ function editNewTask(event) {
         //ui update
         let taskDiv = window.currentEditTaskDiv;
         taskDiv.querySelector('.taskHead').innerText = data.title;
-        taskDiv.querySelector('.taskDesc').innerText = data.description;
+        taskDiv.querySelector('.taskDesc').innerHTML = data.description;
         taskDiv.querySelector('.deadline').innerText = data.date;
         taskDiv.querySelector('.categ').innerText = data.category;
     })
