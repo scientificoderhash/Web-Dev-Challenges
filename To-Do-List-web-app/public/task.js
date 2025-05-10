@@ -110,41 +110,34 @@ function addNewTask(event) {
             const taskDiv = document.createElement('div');
             taskDiv.className = 'task';
             taskDiv.setAttribute('data-id', data.id);
-            taskDiv.innerHTML = `<div style="display: flex;">
-              <input type="checkbox" name="checkbox" id="checkbox">
-              <label for="checkbox" class="taskHead">
-                ${data.title}
-              </label>
-              <svg width="25px" class="editTask" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000">
-                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                <g id="SVGRepo_iconCarrier">
-                  <title></title>
-                  <g id="Complete">
+            taskDiv.innerHTML = `
+    <div class="task-header">
+        <input type="checkbox" name="checkbox" id="checkbox-${data.id}">
+        <label for="checkbox-${data.id}" class="taskHead">${data.title}</label>
+        <svg width="25px" class="editTask" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#5C4B51">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g id="Complete">
                     <g id="edit">
-                      <g>
-                        <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#000000"
-                          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-                        <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#000000"
-                          stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
-                      </g>
+                        <g>
+                            <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#5C4B51"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                            <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#5C4B51"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></polygon>
+                        </g>
                     </g>
-                  </g>
                 </g>
-              </svg>
-            </div>
-
-            <div class="deadline"><i>
-                ${data.date}
-              </i></div>
-            <hr>
-            <div class="taskDesc">
-              ${data.description}
-            </div>
-            <button onclick="deleteTask(event)" class="deleteTask">Delete</button>
-            <span class="categ">
-              ${data.category}
-            </span>`;
+            </g>
+        </svg>
+    </div>
+    <div class="taskDesc">${data.description}</div>
+    <div class="task-footer">
+        <div class="deadline"><i>${data.date}</i></div>
+        <div class="categ">${data.category}</div>
+    </div>
+    <button onclick="deleteTask(event)" class="deleteTask">Delete</button>
+`;
             content.appendChild(taskDiv);
         })
         .catch(error => {
