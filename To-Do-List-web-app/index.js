@@ -21,7 +21,7 @@ app.listen(port, (req, res) => {
 })
 
 app.get("/", (req, res) => {
-    res.render("guest.ejs");
+    res.render("landingPage.ejs");
 })
 
 app.get("/login", (req, res) => {

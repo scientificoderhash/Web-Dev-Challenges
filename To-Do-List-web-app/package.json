@@ -13,6 +13,7 @@
   "dependencies": {
     "ejs": "^3.1.10",
     "express": "^4.21.2",
-    "generate-unique-id": "^2.0.3"
+    "generate-unique-id": "^2.0.3",
+    "nodemon": "^3.1.10"
   }
 }
